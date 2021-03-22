@@ -18,7 +18,7 @@ COPY apache2.conf /etc/apache2/apache2.conf
 COPY modsecurity.conf-recommened /etc/modsecurity/modsecurity.conf-recommended
 
 #Deshabilitar el módulo que indexa los directorios
-RUN a2dismod -f autoindex.load && service apache2 restart 2>/dev/null
+RUN mv /etc/modsecurity/modsecurity.conf-recommended /etc/modsecurity/modsecurity.conf && a2dismod -f autoindex.load && service apache2 restart 2>/dev/null
 
 #Indicar el entrypoint
-ENTRYPOINT ["./entrypoint.sh"]
+CMD ["./entrypoint.sh"]

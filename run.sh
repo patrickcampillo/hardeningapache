@@ -9,5 +9,6 @@ docker run \
     --detach \
     --rm \
     -p 8080:80 \
+    -p 8081:443 \
     --name="hardenapache" \
     hardenapache

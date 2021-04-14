@@ -5,6 +5,7 @@
 # disruption.
 #
 SecRuleEngine On
+SecRule ARGS:testparam "@contains test" "id:1234,deny,status:403,msg:'Cazado por Ciberseguridad'"
 
 
 # -- Request body handling ---------------------------------------------------
